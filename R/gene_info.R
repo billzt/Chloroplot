@@ -36,10 +36,10 @@ geneTableParsed <- function(gb, genome){
   info$gene[is.na(info$gene)] <- info$product[is.na(info$gene)]
   info$pseudo[is.na(info$pseudo)] <- FALSE
 
-  info$gene[grepl(".*([0-9\\.]+)S.*", info$gene)] <-
-    rrnFixer(info$gene[grepl(".*([0-9\\.]+)S.*", info$gene)])
-  info$gene[grepl("^trn.*", info$gene, ignore.case=TRUE)] <-
-    trnFixer(info$gene[grepl("^trn.*", info$gene, ignore.case=TRUE)])
+#  info$gene[grepl(".*([0-9\\.]+)S.*", info$gene)] <-
+#    rrnFixer(info$gene[grepl(".*([0-9\\.]+)S.*", info$gene)])
+#  info$gene[grepl("^trn.*", info$gene, ignore.case=TRUE)] <-
+#    trnFixer(info$gene[grepl("^trn.*", info$gene, ignore.case=TRUE)])
 
 
   gene_table <- info %>%
