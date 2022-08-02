@@ -43,7 +43,7 @@ geneTableParsed <- function(gb, genome){
 
 
   gene_table <- info %>%
-    dplyr::filter(type %in% c("gene", "tRNA", "rRNA")) %>%
+    dplyr::filter(type %in% c("gene", "tRNA", "rRNA", "D-loop")) %>%
     dplyr::select(start, end, strand, gene, pseudo) %>%
     stats::na.omit() %>%
     unique() %>%
