@@ -96,7 +96,7 @@ geneTableRead <- function(gb, genome){
 
   features <- features %>%
     dplyr::mutate(pseudo = rep(FALSE, n())) %>%
-    dplyr::filter(type %in% c("rRNA", "tRNA")) %>%
+    dplyr::filter(type %in% c("rRNA", "tRNA", "D-loop")) %>%
     dplyr::filter(!gene %in% genes$gene)
 
   features$gene[is.na(features$gene)] <- features$product[is.na(features$gene)]
