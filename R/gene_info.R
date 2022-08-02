@@ -43,7 +43,7 @@ geneTableParsed <- function(gb, genome){
 
 
   gene_table <- info %>%
-    dplyr::filter(type %in% c("gene", "tRNA", "rRNA", "D-loop")) %>%
+    dplyr::filter(type %in% c("gene", "tRNA", "rRNA", "D_loop")) %>%
     dplyr::select(start, end, strand, gene, pseudo) %>%
     stats::na.omit() %>%
     unique() %>%
@@ -96,7 +96,7 @@ geneTableRead <- function(gb, genome){
 
   features <- features %>%
     dplyr::mutate(pseudo = rep(FALSE, n())) %>%
-    dplyr::filter(type %in% c("rRNA", "tRNA", "D-loop")) %>%
+    dplyr::filter(type %in% c("rRNA", "tRNA", "D_loop")) %>%
     dplyr::filter(!gene %in% genes$gene)
 
   features$gene[is.na(features$gene)] <- features$product[is.na(features$gene)]
