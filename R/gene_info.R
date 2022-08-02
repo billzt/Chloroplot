@@ -118,10 +118,10 @@ geneTableRead <- function(gb, genome){
       unique()
   }
 
-  gene_table$gene[grepl(".*([0-9\\.]+)S.*", gene_table$gene)] <-
-    rrnFixer(gene_table$gene[grepl(".*([0-9\\.]+)S.*", gene_table$gene)])
-  gene_table$gene[grepl("^trn.*", gene_table$gene, ignore.case=TRUE)] <-
-    trnFixer(gene_table$gene[grepl("^trn.*", gene_table$gene, ignore.case=TRUE)])
+#  gene_table$gene[grepl(".*([0-9\\.]+)S.*", gene_table$gene)] <-
+#    rrnFixer(gene_table$gene[grepl(".*([0-9\\.]+)S.*", gene_table$gene)])
+#  gene_table$gene[grepl("^trn.*", gene_table$gene, ignore.case=TRUE)] <-
+#    trnFixer(gene_table$gene[grepl("^trn.*", gene_table$gene, ignore.case=TRUE)])
 
   # codon usage
   cds <- as.data.frame(genbankr::cds(gb))
