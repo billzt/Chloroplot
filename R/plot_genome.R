@@ -485,9 +485,10 @@ PlotPlastidGenome <- function(plot.tables, save = TRUE, file.type = "pdf",
   ir_table$y[grepl("IR", ir_table$name)] <- 0.75
 
   # 3. Genome information
-  n_trn <- sum(grepl("trn", gene_table$gene, perl = TRUE))
-  n_rrn <- sum(grepl("rrn", gene_table$gene, perl = TRUE))
-  n_gene <- nrow(gene_table) - n_trn - n_rrn
+  n_trn <- sum(grepl("trn", gene_table$class, perl = TRUE))
+  n_rrn <- sum(grepl("rrn", gene_table$class, perl = TRUE))
+  n_other <- sum(grepl("OTHER", gene_table$class, perl = TRUE))
+  n_gene <- nrow(gene_table) - n_trn - n_rrn - n_other
 
   # 4. Generate plot
   # Initialize the plot device
@@ -1318,9 +1319,10 @@ PlotMitGenome <- function(plot.tables, save = TRUE, file.type = "pdf",
   info.color <- CompColor(info.background)
 
   # 3. Genome information
-  n_trn <- sum(grepl("trn", gene_table$gene, perl = TRUE))
-  n_rrn <- sum(grepl("rrn", gene_table$gene, perl = TRUE))
-  n_gene <- nrow(gene_table) - n_trn - n_rrn
+  n_trn <- sum(grepl("trn", gene_table$class, perl = TRUE))
+  n_rrn <- sum(grepl("rrn", gene_table$class, perl = TRUE))
+  n_other <- sum(grepl("OTHER", gene_table$class, perl = TRUE))
+  n_gene <- nrow(gene_table) - n_trn - n_rrn - n_other
 
   # 4. Generate plot
   # Initialize the plot device
